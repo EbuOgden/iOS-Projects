@@ -5,5 +5,5 @@ iOS Practice Projects
 
 # TODO - PageScroll
 <ul>
-  <li> Edit swipe events on the main screen</li>
+<li><strike> Edit swipe events on the main screen</strike> &#x2713;</li>
 </ul>
