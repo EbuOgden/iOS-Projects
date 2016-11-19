@@ -76,16 +76,32 @@ class ViewController: UIViewController {
     }
     
     func leftSwipeMethod(recognizer : UISwipeGestureRecognizer){ // Swipe Left Method
-        let locationX = CGFloat(recognizer.location(in: self.view).x)
-        print("Location is : \(locationX)")
+        var locationX = CGPoint(x: recognizer.location(in: self.view).x, y: 0)
+        let scrollViewX = scrollView.frame.origin.x
+        let contentSize = scrollView.contentSize.width
         
-        scrollView.frame.origin.x = locationX
+        locationX.x += scrollViewX
         
+        if(locationX.x > contentSize - 150){ // Protection for out of box!
+            locationX.x = (contentSize - 150)
+        }
+        
+        scrollView.setContentOffset(locationX, animated: true)
         
     }
     
-    func rightSwipeMethod(){
+    func rightSwipeMethod(recognizer : UISwipeGestureRecognizer){// Swipe Right Method
+        var locationX = CGPoint(x: recognizer.location(in: self.view).x, y: 0)
+        let scrollViewX = scrollView.frame.origin.x
         
+        locationX.x -= scrollViewX
+        
+        if(locationX.x < 0){
+            locationX.x = 0
+        }
+        
+        scrollView.setContentOffset(locationX, animated: true)
+
     }
 
 
