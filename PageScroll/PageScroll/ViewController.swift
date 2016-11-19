@@ -86,7 +86,7 @@ class ViewController: UIViewController {
             locationX.x = (contentSize - 150)
         }
         
-        scrollView.setContentOffset(locationX, animated: true)
+        scrollView.setContentOffset(locationX, animated: true) // Changing Scroll View position
         
     }
     
@@ -100,7 +100,7 @@ class ViewController: UIViewController {
             locationX.x = 0
         }
         
-        scrollView.setContentOffset(locationX, animated: true)
+        scrollView.setContentOffset(locationX, animated: true) // Changing Scroll View position
 
     }
 
